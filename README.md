@@ -2,6 +2,8 @@ The Yammer Ruby Gem
 ====================
 A Ruby wrapper for the Yammer REST APIs
 
+This wrapper is heavily inspired by the [Twitter](https://github.com/jnunemaker/twitter) Ruby Gem (which is AWESOME and you should definitely check)
+
 
 Copyright
 ---------
