@@ -15,7 +15,7 @@ module Yammer
       #   Yammer.messages
       def messages(options={})
         response = get('messages', options)
-        format.to_s.downcase == 'xml' ? response['messages'] : response
+        format.to_s.downcase == 'xml' ? response['response']['messages'] : response
       end
     end
   end
