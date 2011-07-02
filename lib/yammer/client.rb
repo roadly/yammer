@@ -7,9 +7,11 @@ module Yammer
     # order to avoid a superclass mismatch error, allowing those modules to be
     # Client-namespaced.
     require 'yammer/client/messages'
+    require 'yammer/client/feed'
 
     alias :api_endpoint :endpoint
 
     include Yammer::Client::Messages
+    include Yammer::Client::Feed
   end
 end

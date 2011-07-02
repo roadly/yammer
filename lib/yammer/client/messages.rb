@@ -1,54 +1,23 @@
 module Yammer
   class Client
-    # Defines methods related to timelines
+    # Defines methods related to manipulating messages
     module Messages
-      # Returns the 20 most recent messages in this network. Corresponds to the "Company Feed" tab on the website.
+      # Creates a new message from the authenticating user
       #
-      # @note Developers should note that a strict rate limit is applied to all API requests, so clients should never 
-      #   poll for new messages more frequently than every 30 seconds to ensure that the user is still able to use the API for posting messages, etc.
+      # @note A status update with text identical to the authenticating user's current status will be ignored to prevent duplicates.
       # @format :json, :xml
       # @authenticated true
-      # @rate_limited true
+      # @rate_limited false
+      # @param status [String] The text of your message.
       # @param options [Hash] A customizable set of options.
-      # @return [Array]
-      # @see http://developer.yammer.com/api/#message-viewing
-      # @example Return the 20 most recent messages in this network.
-      #   Yammer.messages
-      def messages(options={})
-        response = get('messages', options)
+      # @option options [Integer] :in_reply_to_message_id The ID of an existing message that the message is in reply to.
+      # @return [Hashie::Mash] The created message.
+      # @see http://developer.yammer.com/api/#messages-manipulating
+      # @example Creates a new message for the authenticating user
+      #   Yammer.update("I just posted a status update via the Yammer Ruby Gem!")
+      def update(message, options={})
+        response = post('messages', options.merge(:body => message))
         format.to_s.downcase == 'xml' ? response['response']['messages'] : response
-      end
-
-      # Returns the 20 sent messages by the current logged in user. Corresponds to the "Company Feed" tab on the website.
-      # Alias for /api/v1/messages/from_user/logged-in_user_id.format. Corresponds to the "Sent" tab on the website.
-      # 
-      # @note Important to note that the XML format returns a different structure than the JSON one. So we only support the JSON format for this method.
-      # @format :json
-      # @authenticated true
-      # @rate_limited true
-      # @param options [Hash] A customizable set of options.
-      # @return [Array]
-      # @see http://developer.yammer.com/api/#message-viewing
-      # @example Return the 20 most recent sent messages
-      #   Yammer.messages_sent
-      def messages_sent(options={})
-        response = get('messages/sent', options, :json)
-      end
-      
-      def messages_received(options={})
-        response = get('messages/received', options, :json)
-      end
-      
-      def direct_messages(options={})
-        response = get('messages/private', options, :json)
-      end
-      
-      def my_feed(options={})
-        response = get('messages/following', options, :json)
-      end
-      
-      def messages_from(id, options={})
-        response = get("messages/from_user/#{id}", options, :json)
       end
     end
   end
