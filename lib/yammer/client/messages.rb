@@ -8,7 +8,7 @@ module Yammer
       # @format :json, :xml
       # @authenticated true
       # @rate_limited false
-      # @param status [String] The text of your message.
+      # @param body [String] The text of your message.
       # @param options [Hash] A customizable set of options.
       # @option options [Integer] :in_reply_to_message_id The ID of an existing message that the message is in reply to.
       # @return [Hashie::Mash] The created message.
