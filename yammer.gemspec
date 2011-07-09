@@ -22,7 +22,7 @@ Gem::Specification.new do |gem|
   gem.email = ['bruno.mattarollo@gmail.com']
   gem.executables = `git ls-files -- bin/*`.split("\n").map{|f| File.basename(f)}
   gem.files = `git ls-files`.split("\n")
-  gem.homepage = 'https://github.com/bruno/yammer'
+  gem.homepage = 'https://github.com/roadly/yammer'
   gem.name = 'yammer'
   gem.require_paths = ['lib']
   gem.required_rubygems_version = Gem::Requirement.new('>= 1.3.6')
