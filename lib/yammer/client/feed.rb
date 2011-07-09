@@ -118,7 +118,26 @@ module Yammer
       def messages_from(id, options={})
         response = get("messages/from_user/#{id}", options, :json)
       end
-      
+
+      # Messages in the thread with the given ID. Corresponds to the page you'd see when clicking on "in reply to" on the website. 
+      #
+      # @note Does not accept the threaded parameter.
+      # @format `:json`
+      # @authenticated true
+      # @rate_limited true
+      # @param id [Integer] A thread ID
+      # @param options [Hash] A customizable set of options.
+      # @option options [Integer] :older_than Returns only messages older than the message ID specified. This is useful for paginating messages.
+      # @option options [Integer] :newer_than Return only messages newer than the message ID specified. This should always be used when polling for new messages.
+      # @option options [Integer] :limit Return only the specified number of messages. Works for `threaded=true` and `threaded=extended`.
+      # @return [Hashie::Mash]
+      # @see http://developer.yammer.com/api/#message-viewing
+      # @example Return the messages in the thread with ID 1234567
+      #   Yammer.thread(1234567)
+      def thread(id, options={})
+        response = get("messages/in_thread/#{id}", options)
+        format.to_s.downcase == 'xml' ? response['response']['messages'] : response
+      end
     end
   end
 end
