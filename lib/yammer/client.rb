@@ -2,6 +2,7 @@ module Yammer
   # Wrapper for the Yammer REST API
   #
   # @note All methods have been separated into modules and follow the same grouping used in {http://developer.yammer.com/api/ the Yammer API Documentation}.
+  # @note From Yammer: When polling for messages, do not exceed one poll per minute. Clients polling excessively will be blocked. However, you may sometimes need to fetch messages more frequently than once per minute, for example, if a user flips between "following", "sent" and "received" feeds quickly), and this is allowed for a few requests. Do not attempt to decrease message latency in your client by checking for new messages more frequently than once per minute.
   class Client < API
     # Require client method modules after initializing the Client class in
     # order to avoid a superclass mismatch error, allowing those modules to be
