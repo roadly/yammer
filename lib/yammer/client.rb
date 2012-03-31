@@ -10,11 +10,13 @@ module Yammer
     require 'yammer/client/messages'
     require 'yammer/client/feed'
     require 'yammer/client/users'
+    require 'yammer/client/suggestions'
 
     alias :api_endpoint :endpoint
 
     include Yammer::Client::Messages
     include Yammer::Client::Feed
     include Yammer::Client::Users
+    include Yammer::Client::Suggestions
   end
 end
