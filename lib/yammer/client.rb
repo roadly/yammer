@@ -11,6 +11,7 @@ module Yammer
     require 'yammer/client/feed'
     require 'yammer/client/users'
     require 'yammer/client/search'
+    require 'yammer/client/suggestions'
 
     alias :api_endpoint :endpoint
 
@@ -18,5 +19,6 @@ module Yammer
     include Yammer::Client::Feed
     include Yammer::Client::Users
     include Yammer::Client::Search
+    include Yammer::Client::Suggestions
   end
 end
