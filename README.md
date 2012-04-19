@@ -10,10 +10,12 @@ Installation
 ------------
     gem install yammer
 
-What's in 0.1.0?
+What's in 0.1.2?
 ----------------
 
-This release offers the most basic support for the messages API (creation and consuming) for [Yammer's REST API](https://developer.yammer.com/api/).
+This release offers some additional API support thanks to [ybenjo](https://github.com/ybenjo), eg suggestions, search and groups.
+
+We still only offer the most basic support for [Yammer's REST API](https://developer.yammer.com/api/).
 This gem is **far** from finished or offering complete coverage of all the API methods offered by Yammer. It's our first release covering our basic needs to hook into the messages API.
 
 We are releasing this early version in order to share the path we have taken, offer the community a new Ruby Gem to interact with the Yammer API and build upon it with more support of others that might find it useful.
@@ -26,13 +28,11 @@ TODO
 * Specs, specs and specs ... we lack tests even basic ones.
 * Support for the following APIs
   * Likes
-  * Groups
   * Topics
   * Users
   * Group Memberships
   * Networks
-  * Search
-
+  
 Contributing
 ------------
 In the spirit of [free software](http://www.fsf.org/licensing/essays/free-sw.html), **everyone** is encouraged to help improve this project.
