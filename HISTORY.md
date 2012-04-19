@@ -1,3 +1,7 @@
+0.1.2 - April 19th, 2012
+-------------------------
+* [ybenjo](https://github.com/ybenjo) added search, groups and suggestions api support.
+
 0.1.1 - Sept 21st, 2011
 -------------------------
 * [Rob Warner](https://github.com/hoop33) added about_topic and user[:id]
