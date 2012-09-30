@@ -6,6 +6,7 @@
 .yardoc
 Gemfile.lock
 coverage/*
+spec/coverage/*
 doc/*
 log/*
 pkg/*
