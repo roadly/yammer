@@ -16,7 +16,7 @@ Installation
 ------------
     gem install yammer
 
-What's in 0.1.0?
+What's in 0.1.2?
 ----------------
 
 This release offers the most basic support for the messages API (creation and consuming) for [Yammer's REST API](https://developer.yammer.com/api/).
@@ -81,5 +81,5 @@ Submitting a Pull Request
 
 Copyright
 ---------
-Copyright (c) 2011, Bruno Mattarollo <bruno@road.ly>
+Copyright (c) 2012, Bruno Mattarollo <bruno@road.ly>
 See [LICENSE](https://github.com/roadly/yammer/blob/master/LICENSE.md) for details.
