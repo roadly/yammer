@@ -62,6 +62,12 @@ module Yammer
       yield self
     end
 
+    # @return [Boolean]
+    def credentials?
+      credentials.values.all?
+    end
+
+
     # Create a hash of options and their values
     def options
       options = {}
@@ -83,5 +89,18 @@ module Yammer
       self.gateway            = DEFAULT_GATEWAY
       self
     end
+
+    private
+
+      # @return [Hash]
+      def credentials
+        {
+          :consumer_key => @consumer_key,
+          :consumer_secret => @consumer_secret,
+          :token => @oauth_token,
+          :token_secret => @oauth_token_secret,
+        }
+      end
+
   end
 end
