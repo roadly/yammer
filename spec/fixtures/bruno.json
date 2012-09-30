@@ -1,0 +1,59 @@
+{
+  "kids_names": null,
+  "url": "https://www.yammer.com/api/v1/users/3866451",
+  "last_name": "Mattarollo",
+  "network_name": "road.ly",
+  "state": "active",
+  "interests": null,
+  "network_domains": [
+    "road.ly"
+  ],
+  "timezone": "Pacific Time (US & Canada)",
+  "significant_other": null,
+  "stats": {
+    "followers": 2,
+    "updates": 23,
+    "following": 2
+  },
+  "expertise": null,
+  "external_urls": [],
+  "hire_date": null,
+  "job_title": "",
+  "name": "bruno",
+  "location": null,
+  "settings": {
+    "xdr_proxy": "https://xdrproxy.yammer.com"
+  },
+  "first_name": "Bruno",
+  "full_name": "Bruno Mattarollo",
+  "id": 3866451,
+  "mugshot_url_template": "https://mug0.assets-yammer.com/mugshot/images/{width}x{height}/SGbfrNPdmc-LrrRJjGhjFdvd2t4WsLpg",
+  "birth_date": "",
+  "web_url": "https://www.yammer.com/road.ly/users/bruno",
+  "schools": [],
+  "can_broadcast": "true",
+  "department": null,
+  "summary": null,
+  "previous_companies": [],
+  "mugshot_url": "https://mug0.assets-yammer.com/mugshot/images/48x48/SGbfrNPdmc-LrrRJjGhjFdvd2t4WsLpg",
+  "admin": "true",
+  "contact": {
+    "phone_numbers": [],
+    "email_addresses": [
+      {
+        "address": "bruno@road.ly",
+        "type": "primary"
+      }
+    ],
+    "im": {
+      "provider": "",
+      "username": ""
+    }
+  },
+  "type": "user",
+  "network_id": 175196,
+  "activated_at": "2011/02/02 06:43:53 +0000",
+  "show_ask_for_photo": false,
+  "verified_admin": "false",
+  "guid": null
+}

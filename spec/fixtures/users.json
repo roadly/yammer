@@ -1,0 +1,179 @@
+[
+    {
+        "summary": null,
+        "activated_at": "2011/08/06 23:19:10 +0000",
+        "network_id": 175196,
+        "expertise": null,
+        "id": 3906268,
+        "external_urls": [],
+        "first_name": "Andy",
+        "full_name": "Andy Coffey",
+        "kids_names": null,
+        "verified_admin": "false",
+        "type": "user",
+        "admin": "false",
+        "network_name": "road.ly",
+        "guid": null,
+        "state": "active",
+        "mugshot_url": "https://mug0.assets-yammer.com/mugshot/images/48x48/no_photo.png",
+        "hire_date": null,
+        "mugshot_url_template": "https://mug0.assets-yammer.com/mugshot/images/{width}x{height}/no_photo.png",
+        "previous_companies": [],
+        "stats": {
+            "followers": 2,
+            "updates": 1,
+            "following": 2
+        },
+        "last_name": "Coffey",
+        "network_domains": [
+            "road.ly"
+        ],
+        "web_url": "https://www.yammer.com/road.ly/users/andy",
+        "department": null,
+        "significant_other": null,
+        "birth_date": "",
+        "location": null,
+        "interests": null,
+        "name": "andy",
+        "schools": [],
+        "url": "https://www.yammer.com/api/v1/users/3906268",
+        "job_title": "UI Designer",
+        "settings": {
+            "xdr_proxy": "https://xdrproxy.yammer.com"
+        },
+        "can_broadcast": "false",
+        "show_ask_for_photo": true,
+        "contact": {
+            "phone_numbers": [],
+            "im": {
+                "provider": "",
+                "username": ""
+            },
+            "email_addresses": [
+                {
+                    "type": "primary",
+                    "address": "andy@road.ly"
+                }
+            ]
+        },
+        "timezone": "Pacific Time (US & Canada)"
+    },
+    {
+        "summary": null,
+        "activated_at": "2011/02/02 06:43:53 +0000",
+        "network_id": 175196,
+        "expertise": null,
+        "id": 3866451,
+        "external_urls": [],
+        "first_name": "Bruno",
+        "full_name": "Bruno Mattarollo",
+        "kids_names": null,
+        "verified_admin": "false",
+        "type": "user",
+        "admin": "true",
+        "network_name": "road.ly",
+        "guid": null,
+        "state": "active",
+        "mugshot_url": "https://mug0.assets-yammer.com/mugshot/images/48x48/SGbfrNPdmc-LrrRJjGhjFdvd2t4WsLpg",
+        "hire_date": null,
+        "mugshot_url_template": "https://mug0.assets-yammer.com/mugshot/images/{width}x{height}/SGbfrNPdmc-LrrRJjGhjFdvd2t4WsLpg",
+        "previous_companies": [],
+        "stats": {
+            "followers": 2,
+            "updates": 23,
+            "following": 2
+        },
+        "last_name": "Mattarollo",
+        "network_domains": [
+            "road.ly"
+        ],
+        "web_url": "https://www.yammer.com/road.ly/users/bruno",
+        "department": null,
+        "significant_other": null,
+        "birth_date": "",
+        "location": null,
+        "interests": null,
+        "name": "bruno",
+        "schools": [],
+        "url": "https://www.yammer.com/api/v1/users/3866451",
+        "job_title": "",
+        "settings": {
+            "xdr_proxy": "https://xdrproxy.yammer.com"
+        },
+        "can_broadcast": "true",
+        "show_ask_for_photo": false,
+        "contact": {
+            "phone_numbers": [],
+            "im": {
+                "provider": "",
+                "username": ""
+            },
+            "email_addresses": [
+                {
+                    "type": "primary",
+                    "address": "bruno@road.ly"
+                }
+            ]
+        },
+        "timezone": "Pacific Time (US & Canada)"
+    },
+    {
+        "summary": "Trampoline founder and coffee drinker. Working with an ecosystems approach to make good stuff happen. @awesomefoundsyd founder.",
+        "activated_at": "2011/03/16 22:54:39 +0000",
+        "network_id": 175196,
+        "expertise": "Product Management, social media, business strategy.  ",
+        "id": 3866525,
+        "external_urls": [],
+        "first_name": "Steve",
+        "full_name": "Steve Hopkins",
+        "kids_names": "",
+        "verified_admin": "false",
+        "type": "user",
+        "admin": "true",
+        "network_name": "road.ly",
+        "guid": null,
+        "state": "active",
+        "mugshot_url": "https://mug0.assets-yammer.com/mugshot/images/48x48/zx1wsfkqBqkshBNbMRGHFtwVlg3P3Bts",
+        "hire_date": null,
+        "mugshot_url_template": "https://mug0.assets-yammer.com/mugshot/images/{width}x{height}/zx1wsfkqBqkshBNbMRGHFtwVlg3P3Bts",
+        "previous_companies": [],
+        "stats": {
+            "followers": 3,
+            "updates": 26,
+            "following": 2
+        },
+        "last_name": "Hopkins",
+        "network_domains": [
+            "road.ly"
+        ],
+        "web_url": "https://www.yammer.com/road.ly/users/steve",
+        "department": null,
+        "significant_other": "",
+        "birth_date": "",
+        "location": "",
+        "interests": "",
+        "name": "steve",
+        "schools": [],
+        "url": "https://www.yammer.com/api/v1/users/3866525",
+        "job_title": "Founder",
+        "settings": {
+            "xdr_proxy": "https://xdrproxy.yammer.com"
+        },
+        "can_broadcast": "true",
+        "show_ask_for_photo": false,
+        "contact": {
+            "phone_numbers": [],
+            "im": {
+                "provider": "aim",
+                "username": ""
+            },
+            "email_addresses": [
+                {
+                    "type": "primary",
+                    "address": "steve@road.ly"
+                }
+            ]
+        },
+        "timezone": "Pacific Time (US & Canada)"
+    }
+]
