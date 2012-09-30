@@ -7,6 +7,19 @@ describe Yammer::API do
   end
 
   describe "#users" do
+    before do
+      stub_get("users.json").
+        to_return(:body => fixture("users.json"), :headers => {:content_type => "application/json; charset=utf-8"})
+    end
+    it "requests the right resource" do
+      @client.users
+      a_get("users.json").
+        should have_been_made
+    end
+    it "returns 3 users" do
+      users = @client.users
+      users.count.should eq 3
+    end
   end
 
   describe "#user" do
