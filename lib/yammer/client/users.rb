@@ -4,12 +4,12 @@ module Yammer
     module Users
       # Returns a list of users in our network
       def users(options={})
-        response = get("users", options, :json)
+        get('users', options)
       end
 
       # Returns a particular user
       def user(id, options={})
-        response = get("users/#{id}", options, :json)
+        get("users/#{id}", options)
       end
     end
   end
