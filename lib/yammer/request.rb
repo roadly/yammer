@@ -36,7 +36,7 @@ module Yammer
           end
       end
         'raw' == format.to_s.downcase ? response : response.body
-      rescue MultiJson::DecodeError
+      rescue ::MultiJson::DecodeError
         Hashie::Mash.new
       end
     end
