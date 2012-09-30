@@ -2,6 +2,12 @@ The Yammer Ruby Gem
 ====================
 A Ruby wrapper for the Yammer REST APIs
 
+[![Build Status](https://secure.travis-ci.org/roadly/yammer.png)][travis]
+[![Code Climate](https://codeclimate.com/badge.png)][codeclimate]
+
+[travis]: http://travis-ci.org/roadly/yammer
+[codeclimate]: https://codeclimate.com/github/roadly/yammer
+
 This wrapper is heavily inspired by the [Twitter](https://github.com/jnunemaker/twitter) Ruby Gem (which is AWESOME and you should definitely check)
 
 This gem wouldn't have been possible with the awesomeness of the Twitter Gem and the work **all** their contributors have put into it (and all the other great libraries we depend upon). Please consider [financially supporting the development](http://pledgie.com/campaigns/1193) of the Twitter Ruby Gem.
@@ -59,7 +65,7 @@ features. Before submitting a bug report or feature request, check to make sure 
 been submitted. You can indicate support for an existing issue by voting it up. When submitting a
 bug report, please include a [Gist](https://gist.github.com/) that includes a stack trace and any
 details that may be necessary to reproduce the bug, including your gem version, Ruby version, and
-operating system. 
+operating system.
 
 Submitting a Pull Request
 -------------------------
