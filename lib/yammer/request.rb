@@ -25,16 +25,20 @@ module Yammer
 
     # Perform an HTTP request
     def request(method, path, options, format)
-      response = connection(format).send(method) do |request|
-        case method.to_sym
-        when :get, :delete
-          request.url(formatted_path(path, format), options)
-        when :post, :put
-          request.path = formatted_path(path, format)
-          request.body = options unless options.empty?
-        end
+      begin
+        response = connection(format).send(method) do |request|
+          case method.to_sym
+          when :get, :delete
+            request.url(formatted_path(path, format), options)
+          when :post, :put
+            request.path = formatted_path(path, format)
+            request.body = options unless options.empty?
+          end
       end
-      'raw' == format.to_s.downcase ? response : response.body
+        'raw' == format.to_s.downcase ? response : response.body
+      rescue MultiJson::DecodeError
+        Hashie::Mash.new
+      end
     end
 
     def formatted_path(path, format)
