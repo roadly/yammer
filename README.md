@@ -25,7 +25,7 @@ I am eternally grateful for the work that the team that created the awesome (did
 Getting Started
 ---------------
 
-You should probably being Omniauth, cuz its awesome, and be following that flow.  Ryan Bate's excellent RailsCasts are also a great reference: http://railscasts.com/episodes/236-omniauth-part-2
+You should probably be using Omniauth(http://github.com/intridea/omniauth), cuz its awesome, and be following that flow.  Ryan Bate's excellent RailsCasts are also a great reference: http://railscasts.com/episodes/236-omniauth-part-2
 
 Whatever controller handles the callback, you will have access to a "credentials" key in the oauth object which has an "expires" key, and a "token" key.  I stash that entire object in a serialized string in my Authentication model.  This token is what you will need.
 
