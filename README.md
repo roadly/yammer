@@ -22,6 +22,22 @@ We are releasing this early version in order to share the path we have taken, of
 
 I am eternally grateful for the work that the team that created the awesome (did I say how awesome that Gem is already? ;) ) [Twitter](https://github.com/jnunemaker/twitter) Ruby Gem put into it and made it open and free. **THANK YOU** :)
 
+Getting Started
+---------------
+
+You should probably being Omniauth, cuz its awesome, and be following that flow.  Ryan Bate's excellent RailsCasts are also a great reference: http://railscasts.com/episodes/236-omniauth-part-2
+
+Whatever controller handles the callback, you will have access to a "credentials" key in the oauth object which has an "expires" key, and a "token" key.  I stash that entire object in a serialized string in my Authentication model.  This token is what you will need.
+
+    token = current_user.authentications.find_by_provider("yammer").credentials.token
+    yam = Yammer.new(oauth_token: token)
+    
+That's it!
+
+    yam.groups
+    yam.users
+
+
 TODO
 ----
 
