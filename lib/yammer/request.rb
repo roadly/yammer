@@ -26,22 +26,26 @@ module Yammer
     # Perform an HTTP request
     def request(method, path, options, format)
       begin
-        response = connection(format).send(method) do |request|
-          case method.to_sym
-          when :get, :delete
-            request.url(formatted_path(path, format), options)
-          when :post, :put
-            request.path = formatted_path(path, format)
-            request.body = options unless options.empty?
-          end
-      end
-        'raw' == format.to_s.downcase ? response : response.body
+        case method.to_sym
+        when :get, :delete
+          response = connection.send(method, formatted_path(path, format))
+        when :post, :put
+          raise "POST and PUT verbs are not yet supported!"
+          # request.path = formatted_path(path, format)
+          # request.body = options unless options.empty?
+        end
+      
+      #TODO: format is not obeyed.  From Yam we get back an array of objects
+      response
+      
       rescue MultiJson::DecodeError
         Hashie::Mash.new
       end
     end
 
     def formatted_path(path, format)
+      #paths must have a leading /
+      path = "/#{path}" if path[0] != "/"
       case format.to_s.downcase
       when 'json', 'xml'
         [path, format].compact.join('.')

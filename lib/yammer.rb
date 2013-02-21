@@ -1,3 +1,4 @@
+require 'yam'
 require 'yammer/api'
 require 'yammer/client'
 require 'yammer/configuration'
