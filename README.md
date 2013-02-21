@@ -16,6 +16,7 @@ What's in 0.1.3?
 This release rips old the old api dependencies on Faraday and whatever else handles connection related issues and passed it all off to Yammer's own Yam gem(which itself uses Faraday).
 
 Improved api support
+
    yam.users  
 
 Getting Started
