@@ -17,7 +17,8 @@ This release rips old the old api dependencies on Faraday and whatever else hand
 
 Improved api support
 
-    yam.users  
+    yam.users
+    yam.in_group  
 
 Getting Started
 ---------------
