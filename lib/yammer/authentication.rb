@@ -1,6 +1,13 @@
 module Yammer
   # @private
   module Authentication
+    # Check whether user is authenticated
+    #
+    # @return [Boolean]
+    def authenticated?
+      authentication.values.all?
+    end
+    
     private
 
     # Authentication hash
@@ -12,11 +19,5 @@ module Yammer
       }
     end
 
-    # Check whether user is authenticated
-    #
-    # @return [Boolean]
-    def authenticated?
-      authentication.values.all?
-    end
   end
 end
