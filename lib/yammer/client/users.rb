@@ -9,6 +9,10 @@ module Yammer
       def users(options={})
         response = get("users", options, :json)
       end
+      
+      def in_group(group_id, options={})
+        response = get("users/in_group/#{group_id}", options, :json)
+      end
     end
   end
 end
