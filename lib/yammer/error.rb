@@ -1,4 +1,48 @@
 module Yammer
+
+  # This gem seems to monkey patch faraday to catch certain exceptions
+  # and even that attempt does not seem to be loaded anywhere, so instead
+  # we'll catch the error on every request(and possibly elsewhere)
+  # and then pass the exception to this class who will figure out the proper 
+  # high level exception to raise
+  class ErrorProxy
+    def self.new(exception)
+      return self.determine_exception(exception)
+    end
+    
+    def self.determine_exception(exception)
+      exception = exception
+      message = exception.message
+      status = exception.response[:status]
+      headers = exception.response[:headers]
+
+      case status.to_i
+      when 400
+        Yammer::BadRequest.new(error_message(message), headers)
+      when 401
+        Yammer::Unauthorized.new(error_message(message), headers)
+      when 403
+        Yammer::Forbidden.new(error_message(message), headers)
+      when 404
+        Yammer::NotFound.new(error_message(message), headers)
+      when 406
+        Yammer::NotAcceptable.new(error_message(message), headers)
+      when 500
+        Yammer::InternalServerError.new(error_message("Something is technically wrong."), headers)
+      when 502
+        Yammer::BadGateway.new(error_message("Yammer is down or being upgraded."), headers)
+      when 503
+        Yammer::ServiceUnavailable.new(error_message("(__-){ Yammer is over capacity."), headers)
+      end      
+    end
+  
+    private
+    def self.error_message(msg)
+      #TODO: this can be used in the future to print nicer messages
+      msg
+    end
+  end
+
   # Custom error class for rescuing from all Yammer errors
   class Error < StandardError
     attr_reader :http_headers

@@ -40,6 +40,9 @@ module Yammer
       
       rescue MultiJson::DecodeError
         Hashie::Mash.new
+      rescue Faraday::Error::ClientError => e
+        raise Yammer::ErrorProxy.new(e)
+
       end
     end
 
