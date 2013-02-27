@@ -10,7 +10,7 @@ Installation
 ------------
     gem install yammer
 
-What's in 0.1.3?
+What's in 0.1.4?
 ----------------
 
 This release rips old the old api dependencies on Faraday and whatever else handles connection related issues and passed it all off to Yammer's own Yam gem(which itself uses Faraday).
@@ -19,6 +19,20 @@ Improved api support
 
     yam.users
     yam.in_group  
+
+Better Exception Handling
+
+    It was completely broken, now you can catch all sorts of exceptions with Yammer api based upon http status:
+    
+    - 400: Yammer::BadRequest
+    - 401: Yammer::Unauthorized
+    - 403: Yammer::Forbidden
+    - 404: Yammer::NotFound
+    - 406: Yammer::NotAcceptable
+    - 500: Yammer:InternalServerError
+    - 502: Yammer::BadGateway
+    - 503: Yammer::ServiceUnavailable
+
 
 Getting Started
 ---------------
