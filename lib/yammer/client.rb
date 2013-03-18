@@ -13,6 +13,7 @@ module Yammer
     require 'yammer/client/search'
     require 'yammer/client/suggestions'
     require 'yammer/client/groups'
+    require 'yammer/client/activity'
 
     alias :api_endpoint :endpoint
 
@@ -22,5 +23,6 @@ module Yammer
     include Yammer::Client::Search
     include Yammer::Client::Suggestions
     include Yammer::Client::Groups
+    include Yammer::Client::Activity
   end
 end

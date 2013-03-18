@@ -4,12 +4,12 @@ require "yammer/version"
 
 Gem::Specification.new do |gem|
   gem.add_runtime_dependency 'yam', '~> 0.0.6'
-  gem.authors = ["Bruno Mattarollo"]
+  gem.authors = ["Bruno Mattarollo, Peter Philips"]
   gem.description = %q{A Ruby wrapper for the Yammer REST API}
-  gem.email = ['bruno.mattarollo@gmail.com']
+  gem.email = ['bruno.mattarollo@gmail.com', 'pete@p373.net']
   gem.executables = `git ls-files -- bin/*`.split("\n").map{|f| File.basename(f)}
   gem.files = `git ls-files`.split("\n")
-  gem.homepage = 'https://github.com/roadly/yammer'
+  gem.homepage = 'https://github.com/synth/yammer'
   gem.name = 'yammer'
   gem.require_paths = ['lib']
   gem.required_rubygems_version = Gem::Requirement.new('>= 1.3.6')

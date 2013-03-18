@@ -29,8 +29,10 @@ module Yammer
         case method.to_sym
         when :get, :delete
           response = connection.send(method, formatted_path(path, format))
-        when :post, :put
-          raise "POST and PUT verbs are not yet supported!"
+        when :post
+          response = connection.send(method, formatted_path(path, format), options)
+        when :put
+          raise "PUT verbs are not yet supported!"
           # request.path = formatted_path(path, format)
           # request.body = options unless options.empty?
         end
