@@ -25,6 +25,8 @@ module Yammer
         Yammer::Forbidden.new(error_message(message), headers)
       when 404
         Yammer::NotFound.new(error_message(message), headers)
+      when 429
+        Yammer::TooManyRequests.new(error_message(message), headers)
       when 406
         Yammer::NotAcceptable.new(error_message(message), headers)
       when 500
@@ -33,6 +35,8 @@ module Yammer
         Yammer::BadGateway.new(error_message("Yammer is down or being upgraded."), headers)
       when 503
         Yammer::ServiceUnavailable.new(error_message("(__-){ Yammer is over capacity."), headers)
+      else
+        Exception.new("Unhandled Exception Status: #{status} - #{message}")
       end      
     end
   
@@ -92,4 +96,7 @@ module Yammer
 
   # Raised when Yammer returns the HTTP status code 503
   class ServiceUnavailable < Error; end
+
+  # Raised when you hit Yammer's request rate limit
+  class TooManyRequests < Error;end
 end
