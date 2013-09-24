@@ -28,7 +28,7 @@ module Yammer
       begin
         case method.to_sym
         when :get, :delete
-          response = connection.send(method, formatted_path(path, format))
+          response = connection.send(method, formatted_path(path, format), options)
         when :post
           response = connection.send(method, formatted_path(path, format), options)
         when :put
