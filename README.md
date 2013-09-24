@@ -10,17 +10,45 @@ Installation
 ------------
     gem install yammer
 
-What's in 0.1.2?
+What's in 0.1.4?
 ----------------
 
-This release offers some additional API support thanks to [ybenjo](https://github.com/ybenjo), eg suggestions, search and groups.
+This release rips old the old api dependencies on Faraday and whatever else handles connection related issues and passed it all off to Yammer's own Yam gem(which itself uses Faraday).
 
-We still only offer the most basic support for [Yammer's REST API](https://developer.yammer.com/api/).
-This gem is **far** from finished or offering complete coverage of all the API methods offered by Yammer. It's our first release covering our basic needs to hook into the messages API.
+Improved api support
 
-We are releasing this early version in order to share the path we have taken, offer the community a new Ruby Gem to interact with the Yammer API and build upon it with more support of others that might find it useful.
+    yam.users
+    yam.in_group  
 
-I am eternally grateful for the work that the team that created the awesome (did I say how awesome that Gem is already? ;) ) [Twitter](https://github.com/jnunemaker/twitter) Ruby Gem put into it and made it open and free. **THANK YOU** :)
+Better Exception Handling
+
+    It was completely broken, now you can catch all sorts of exceptions with Yammer api based upon http status:
+    
+    - 400: Yammer::BadRequest
+    - 401: Yammer::Unauthorized
+    - 403: Yammer::Forbidden
+    - 404: Yammer::NotFound
+    - 406: Yammer::NotAcceptable
+    - 500: Yammer:InternalServerError
+    - 502: Yammer::BadGateway
+    - 503: Yammer::ServiceUnavailable
+
+
+Getting Started
+---------------
+
+You should probably be using Omniauth(http://github.com/intridea/omniauth), cuz its awesome, and be following that flow.  Ryan Bate's excellent RailsCasts are also a great reference: http://railscasts.com/episodes/236-omniauth-part-2
+
+Whatever controller handles the callback, you will have access to a "credentials" key in the oauth object which has an "expires" key, and a "token" key.  I stash that entire object in a serialized string in my Authentication model.  This token is what you will need.
+
+    token = current_user.authentications.find_by_provider("yammer").credentials.token
+    yam = Yammer.new(oauth_token: token)
+    
+That's it!
+
+    yam.groups
+    yam.users
+
 
 TODO
 ----
